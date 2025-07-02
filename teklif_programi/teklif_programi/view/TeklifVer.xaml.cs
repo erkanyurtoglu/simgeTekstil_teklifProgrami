@@ -136,6 +136,38 @@ namespace teklif_programi.view
                 return;
             }
 
+            // 1. Teklif tablosuna yeni kayıt
+            int firmaKodu = int.Parse(txtFirmaKodu.Text);
+            int personelKodu = 1; // Giriş yapan personel ID’si buraya gelmeli
+
+            var yeniTeklif = new Teklif
+            {
+                FirmaKoduID = firmaKodu,
+                PersonelKoduID = personelKodu,
+                TeklifTarihi = DateTime.Now,
+                ToplamTutar = ToplamFiyatHesapla(secilenUrunler)
+            };
+
+            _db.Teklifler.Add(yeniTeklif);
+            _db.SaveChanges(); // burada TeklifNoID oluşur
+
+            // 2. TeklifDetaylari tablosuna ürünleri kaydet
+            foreach (var urun in secilenUrunler)
+            {
+                var detay = new TeklifDetay
+                {
+                    TeklifNoID = yeniTeklif.TeklifNoID, // yeni oluşan teklifin ID’si
+                    UrunKoduID = urun.UrunKoduID,
+                    Adet = urun.Adet,
+                    BirimFiyat = urun.BirimSatisFiyati,
+                    ToplamFiyat = urun.BirimSatisFiyati * urun.Adet
+                };
+                _db.TeklifDetaylari.Add(detay);
+            }
+
+            _db.SaveChanges(); // detayları kaydet
+
+
             // SaveFileDialog ile kullanıcıdan kaydetme yeri ve ismi al
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "PDF dosyası (*.pdf)|*.pdf";
