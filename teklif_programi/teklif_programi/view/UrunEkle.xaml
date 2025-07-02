@@ -1,0 +1,143 @@
+﻿    <UserControl x:Class="teklif_programi.view.UrunEkle"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 mc:Ignorable="d" d:DesignHeight="900" d:DesignWidth="1350">
+
+        <UserControl.Resources>
+            <!-- Modern Buton Stili -->
+            <Style x:Key="ModernButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#3c271a"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Height" Value="38"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="FontFamily" Value="Source Sans Pro"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#4B4B4B"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </UserControl.Resources>
+
+        <Grid Background="#ededed" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Başlık -->
+                <RowDefinition Height="*"/>
+                <!-- Form ve Butonlar -->
+            </Grid.RowDefinitions>
+
+            <!-- Başlık -->
+            <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
+                <TextBlock Text="📦⁺ Ürün Ekle" 
+                           FontSize="32" 
+                           FontWeight="Bold" 
+                           FontFamily="Segoe UI"
+                           Foreground="#7a390b" />
+            <Border Height="2" Width="220" Background="#7a390b" CornerRadius="1" Margin="0,8,0,0"/>
+            </StackPanel>
+
+            <!-- Form ve Butonlar -->
+            <StackPanel Grid.Row="1" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="70,70,70,0" >
+
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Ürün Kodu -->
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <TextBlock Text="Ürün Kodu" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtUrunKodu" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+
+                    <!-- Ürün Kategorisi -->
+                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                        <TextBlock Text="Ürün Kategorisi" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtUrunKategori" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Ürün Açıklaması -->
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <TextBlock Text="Ürün Açıklaması" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtUrunAciklama" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+
+                    <!-- Ürün Adedi -->
+                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                        <TextBlock Text="Ürün Adedi" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtUrunAdedi" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 2025 Birim Satış Fiyatı -->
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <TextBlock Text="2025 Birim Satış Fiyatı" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtBirimSatisFiyati" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+
+                    <!-- 2025 Satış Toplam Fiyatı -->
+                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                        <TextBlock Text="2025 Satış Toplam Fiyatı" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtSatisToplamFiyati" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Yurtiçi Maliyet Birim Fiyatı -->
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                        <TextBlock Text="Yurtiçi Maliyet Birim Fiyatı" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtYurtiçiMaliyet" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+
+                    <!-- Toplam Fiyat -->
+                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                        <TextBlock Text="Toplam Fiyat" FontSize="14" Foreground="#13183E" Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtToplamFiyat" Height="40" FontSize="14" BorderBrush="#ccc" BorderThickness="1" Padding="10,0" VerticalContentAlignment="Center" Background="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Butonlar aynı hizada ve hemen altında -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <Button x:Name = "Kaydet" Content="Kaydet" Style="{StaticResource ModernButtonStyle}" Width="180" Margin="0,0,40,0" Click="Kaydet_Click"/>
+                    <Button x:Name= "iptal" Content="İptal" Style="{StaticResource ModernButtonStyle}" Background="#C0392B" Width="180"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </UserControl>
