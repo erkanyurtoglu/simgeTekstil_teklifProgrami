@@ -42,7 +42,7 @@ namespace teklif_programi.view
 
             if (result == true)
             {
-                const string dogruSifre = "Liya2015"; // Şifreni buraya koy
+                const string dogruSifre = "1234"; // Şifreni buraya koy
 
                 if (pwdDialog.EnteredPassword == dogruSifre)
                 {

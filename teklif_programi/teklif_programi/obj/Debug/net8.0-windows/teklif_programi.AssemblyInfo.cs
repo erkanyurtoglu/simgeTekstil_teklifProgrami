@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("teklif_programi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7321ac2523119e1e754e2cd20ac5fd47dc4339fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d3db6b0b127cf8a1c7071829de43cab464e5234")]
 [assembly: System.Reflection.AssemblyProductAttribute("teklif_programi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("teklif_programi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

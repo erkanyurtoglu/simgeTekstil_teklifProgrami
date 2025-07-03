@@ -45,7 +45,7 @@ namespace teklif_programi.view
             var pwdWindow = new PasswordDialog();
             pwdWindow.Owner = this;
 
-            if (pwdWindow.ShowDialog() == true && pwdWindow.EnteredPassword == "Liya2015")
+            if (pwdWindow.ShowDialog() == true && pwdWindow.EnteredPassword == "1234")
             {
                 // Güncelleme işlemi
                 _urun.Kategori = txtKategori.Text;
